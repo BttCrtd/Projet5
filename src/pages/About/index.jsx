@@ -1,7 +1,10 @@
+import AboutPicture from '../../assets/kalen-emsley.png'
+import Banner from '../../components/Banner'
+
 function About() {
   return (
     <div>
-      <h1>A Propos</h1>
+      <Banner source={AboutPicture} />
     </div>
   )
 }
