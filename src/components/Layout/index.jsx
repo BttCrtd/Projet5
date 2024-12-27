@@ -22,10 +22,12 @@ const Kasa_Logo = styled.img`
 `
 
 const Head = styled.header`
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1240px;
 `
 
 const FooterContainer = styled.footer`
@@ -36,6 +38,7 @@ const FooterContainer = styled.footer`
   align-items: center;
   justify-content: start;
   background-color: black;
+  max-width: 1240px;
 `
 
 const P = styled.p`
