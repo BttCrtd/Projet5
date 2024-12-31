@@ -1,3 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+body,
+main {
+  font-family: "Montserrat", serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+body div,
+main div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+header {
+  margin-top: 40px;
+  margin-bottom: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1240px;
+  width: 100%;
+  height: 68px;
+}
+header img {
+  height: 68px;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+}
+header nav a {
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+}
+header nav .active {
+  text-decoration: underline;
+}
 
-/*# sourceMappingURL=style.css.map */
+footer {
+  height: 129px;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: rgb(0, 0, 0);
+}
+footer p {
+  margin-top: 45.56px;
+  color: white;
+  font-weight: 500;
+  font-size: 24px;
+}
+footer img {
+  width: 122px;
+  margin-top: 26px;
+}
+
+.banner {
+  max-width: 1240px;
+  width: 100%;
+  height: 223px;
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 43px;
+}
+.banner img {
+  mix-blend-mode: darken;
+  z-index: 0;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.banner h1 {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 1px 1px 0 black, -1px 1px 0 black, 1px -1px 0 black, -1px -1px 0 black, 4px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.banner div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  mix-blend-mode: darken;
+}
+
+.cards {
+  max-width: 1140px;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: rgb(246, 246, 246);
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 43px;
+  gap: 50px;
+  border-radius: 25px;
+}
+.cards div {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(10, 10, 10, 0), rgba(4, 4, 4, 0.205), rgba(0, 0, 0, 0.5));
+  position: absolute;
+  z-index: 1;
+  border-radius: 10px;
+}
+.cards h2 {
+  font-weight: 700;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  position: absolute;
+  z-index: 2;
+}
+.cards img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  border-radius: 10px;
+}
+.cards a {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  width: 340px;
+  height: 340px;
+  position: relative;
+}
+
+.collapse {
+  max-width: 1023px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 43px;
+}
+.collapse .element {
+  width: 100%;
+}
+.collapse .element div {
+  width: 100%;
+  height: 54px;
+  background-color: rgb(255, 96, 96);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+.collapse .element h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  margin-left: 15px;
+}
+.collapse .element button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: rgb(255, 96, 96);
+  color: white;
+  margin-right: 15px;
+}
+.collapse .element button.rotated {
+  transform: rotate(180deg);
+}
+.collapse .element .content {
+  background-color: #f8f8f8;
+  border-radius: 0 0 5px 5px;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  height: auto;
+  max-height: 0;
+  transition: 20s ease-in-out;
+}
+.collapse .element p {
+  margin: 0;
+  padding: 15px;
+}
+
+.error {
+  max-width: 1240px;
+  min-height: 844px;
+  display: flex;
+  justify-content: space-around;
+}
+.error h1 {
+  font-size: 288px;
+  font-weight: 700;
+  color: rgb(255, 96, 96);
+  margin: 0;
+}
+.error p {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+  color: rgb(255, 96, 96);
+}
+.error a {
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+}/*# sourceMappingURL=style.css.map */

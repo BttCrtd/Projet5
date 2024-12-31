@@ -1,6 +1,6 @@
-import Banner from '../../components/Banner'
+import Banner from '../../components/Banner/banner'
 import HomePicture from '../../assets/IMG.png'
-import CardAffichage from '../../components/Card'
+import CardAffichage from '../../components/Card/card'
 
 function Home() {
   return (

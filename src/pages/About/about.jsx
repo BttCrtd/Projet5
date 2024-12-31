@@ -1,10 +1,10 @@
 import AboutPicture from '../../assets/kalen-emsley.png'
-import Banner from '../../components/Banner'
-import { CollapseContainer, Collapse } from '../../components/Collapse'
+import Banner from '../../components/Banner/banner'
+import { CollapseContainer, Collapse } from '../../components/Collapse/collapse'
 
 function About() {
   const fiabilityText =
-    'Les annances postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toute les informations sont régulièrementvérifiées par nos équipes.'
+    'Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toute les informations sont régulièrementvérifiées par nos équipes.'
   const respectText =
     'La bienveilllance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.'
   const serviceText =
