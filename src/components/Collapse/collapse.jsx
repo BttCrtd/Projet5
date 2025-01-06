@@ -1,21 +1,24 @@
-import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import '../../style/style.css'
 
 import { useState } from 'react'
 
-function Collapse({ name, text }) {
+function Collapse({ name, text, list }) {
   const [isVisible, setIsVisible] = useState(false)
+  const [rotated, setRotated] = useState(false)
+
   const toggleVisibility = () => {
     setIsVisible(!isVisible)
+    setRotated(!rotated)
   }
+
   return (
     <div className="element">
       <div>
         <h2>{name}</h2>
         <button
-          className={isVisible ? 'rotated' : ''}
+          className={`${rotated ? 'rotated' : ''}`}
           onClick={toggleVisibility}
         >
           <FontAwesomeIcon icon={faChevronUp} size="2xl" />
@@ -28,24 +31,23 @@ function Collapse({ name, text }) {
             maxHeight: isVisible ? '1000px' : '0',
           }}
         >
-          <p>{text}</p>
+          {text ? (
+            <p>{text}</p>
+          ) : list.length > 0 ? (
+            <ul>
+              {list.map((element, index) => (
+                <li key={index}>{element}</li>
+              ))}
+            </ul>
+          ) : (
+            <ul>
+              <li>Aucun équipement</li>
+            </ul>
+          )}
         </div>
       )}
     </div>
   )
 }
 
-function CollapseContainer({ children }) {
-  return <section className="collapse">{children}</section>
-}
-
-Collapse.propTypes = {
-  name: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-}
-
-CollapseContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export { CollapseContainer, Collapse }
+export default Collapse

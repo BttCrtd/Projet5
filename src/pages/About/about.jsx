@@ -1,6 +1,7 @@
 import AboutPicture from '../../assets/kalen-emsley.png'
 import Banner from '../../components/Banner/banner'
-import { CollapseContainer, Collapse } from '../../components/Collapse/collapse'
+import Collapse from '../../components/Collapse/collapse'
+import '../../style/style.css'
 
 function About() {
   const fiabilityText =
@@ -14,12 +15,12 @@ function About() {
   return (
     <div>
       <Banner source={AboutPicture} />
-      <CollapseContainer>
+      <section className="collapse">
         <Collapse name={'Fiabilité'} text={fiabilityText} />
         <Collapse name={'Respect'} text={respectText} />
         <Collapse name={'Service'} text={serviceText} />
         <Collapse name={'Sécurité'} text={securityText} />
-      </CollapseContainer>
+      </section>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import KasaLogo from '../../assets/LOGO.png'
 import KasaLogoFooter from '../../assets/LogoFooter.png'
-import PropTypes from 'prop-types'
+
 import '../../style/style.css'
 
 function Layout({ children }) {
@@ -21,10 +21,6 @@ function Layout({ children }) {
       </footer>
     </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

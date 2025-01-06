@@ -210,6 +210,11 @@ footer img {
   margin: 0;
   padding: 15px;
 }
+.collapse .element ul {
+  margin: 0;
+  padding: 15px;
+  list-style: none;
+}
 
 .error {
   max-width: 1240px;
@@ -234,4 +239,146 @@ footer img {
   font-weight: 500;
   text-decoration: underline;
   color: rgb(0, 0, 0);
+}
+
+.logement {
+  max-width: 1240px;
+  min-height: 643px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.logement .gallery {
+  height: 415px;
+  margin: 0;
+  position: relative;
+}
+.logement .gallery img {
+  width: 100%;
+  height: 415px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 25px;
+  position: absolute;
+  z-index: 1;
+}
+.logement .gallery .button {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  z-index: 3;
+}
+.logement .gallery .button button {
+  font-size: 79.2px;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  border: none;
+  margin: 0 23.36px;
+  padding: 0;
+  opacity: 87%;
+}
+.logement .gallery .pictureNumber {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+.logement div {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.logement div div {
+  height: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 0;
+}
+.logement div .title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.logement div .title h1 {
+  font-size: 36px;
+  font-weight: 500;
+  color: rgb(255, 96, 96);
+  margin: 0;
+}
+.logement div .title p {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+.logement div .host {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: flex-start;
+  gap: 10px;
+}
+.logement div .host p {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(255, 96, 96);
+}
+.logement div .host img {
+  height: 64px;
+  width: 64px;
+  background-color: gray;
+  border-radius: 50px;
+}
+.logement div .tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+}
+.logement div .tags div {
+  min-width: 115px;
+  height: 25px;
+  background-color: rgb(255, 96, 96);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.logement div .tags div p {
+  margin: 0 25px 0 25px;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+.logement div .rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  font-size: 24px;
+  gap: 15.25px;
+  margin-top: 21px;
+}
+.logement .collapse {
+  width: 100%;
+  max-width: 1240px;
+  gap: 76px;
 }/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,4 @@
 import '../../style/style.css'
-import PropTypes from 'prop-types'
 
 function Banner({ source, text }) {
   return (
@@ -13,11 +12,6 @@ function Banner({ source, text }) {
       )}
     </div>
   )
-}
-
-Banner.propTypes = {
-  source: PropTypes.node.isRequired,
-  text: PropTypes.node,
 }
 
 export default Banner
