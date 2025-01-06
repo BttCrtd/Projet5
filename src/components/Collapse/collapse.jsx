@@ -24,28 +24,21 @@ function Collapse({ name, text, list }) {
           <FontAwesomeIcon icon={faChevronUp} size="2xl" />
         </button>
       </div>
-      {isVisible && (
-        <div
-          className="content"
-          style={{
-            maxHeight: isVisible ? '1000px' : '0',
-          }}
-        >
-          {text ? (
-            <p>{text}</p>
-          ) : list.length > 0 ? (
-            <ul>
-              {list.map((element, index) => (
-                <li key={index}>{element}</li>
-              ))}
-            </ul>
-          ) : (
-            <ul>
-              <li>Aucun équipement</li>
-            </ul>
-          )}
-        </div>
-      )}
+      <div className={`content ${isVisible ? 'active' : 'close'}`}>
+        {text ? (
+          <p>{text}</p>
+        ) : list.length > 0 ? (
+          <ul>
+            {list.map((element, index) => (
+              <li key={index}>{element}</li>
+            ))}
+          </ul>
+        ) : (
+          <ul>
+            <li>Aucun équipement</li>
+          </ul>
+        )}
+      </div>
     </div>
   )
 }

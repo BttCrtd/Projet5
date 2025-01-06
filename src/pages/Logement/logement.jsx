@@ -10,8 +10,8 @@ import {
 import { useState } from 'react'
 
 function Logement() {
-  const location = useLocation() // Récupère l'objet state
-  const { logement } = location.state || {} // Accède aux données passées
+  const location = useLocation()
+  const { logement } = location.state || {}
 
   const [currentIndex, setCurrentIndex] = useState(0)
 

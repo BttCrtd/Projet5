@@ -204,6 +204,8 @@ footer {
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
+    position: relative; /* Pour permettre au contenu de sortir visuellement de derrière */
+    overflow: hidden; /* Cache le contenu qui dépasse */
   }
 
   h2 {
@@ -221,21 +223,63 @@ footer {
     background-color: rgba(255, 96, 96, 1);
     color: white;
     margin-right: 15px;
-    transition: transform 3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   button.rotated {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Animation pour le texte qui descend */
+  @keyframes slideFromBehind {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+      height: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      height: auto;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+      height: auto;
+    }
+    100% {
+      transform: translateY(-100%);
+      opacity: 0;
+      height: 0;
+    }
   }
 
   .content {
-    background-color: #f8f8f8;
-    border-radius: 0 0 5px 5px;
-    width: 100%;
-    margin: 0;
+    max-height: 0;
+    opacity: 0;
     overflow: hidden;
-    height: auto;
-    transition: 0.3s ease-in-out;
+    transform: translateY(-100%); /* Cache le texte derrière la bannière */
+    background-color: rgba(246, 246, 246, 1);
+    border-radius: 5px;
+    transition:
+      opacity 0.5s ease-in-out,
+      max-height 0.5s ease-in-out;
+    position: relative;
+    z-index: -1;
+  }
+
+  .content.active {
+    max-height: 100%;
+    animation: slideFromBehind 0.8s ease-out forwards;
+  }
+
+  .content.close {
+    max-height: 100%;
+    animation: slideUp 0.8s ease-out forwards;
   }
 
   p {
@@ -434,5 +478,14 @@ footer {
     width: 100%;
     max-width: 1240px;
     gap: 76px;
+
+    div {
+      width: 100%;
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
   }
 }
