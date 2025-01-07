@@ -1,16 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import '../../style/style.css'
-
 import { useState } from 'react'
 
 function Collapse({ name, text, list }) {
   const [isVisible, setIsVisible] = useState(false)
-  const [rotated, setRotated] = useState(false)
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible)
-    setRotated(!rotated)
   }
 
   return (
@@ -18,7 +15,7 @@ function Collapse({ name, text, list }) {
       <div>
         <h2>{name}</h2>
         <button
-          className={`${rotated ? 'rotated' : ''}`}
+          className={isVisible ? 'rotated' : ''}
           onClick={toggleVisibility}
         >
           <FontAwesomeIcon icon={faChevronUp} size="2xl" />
@@ -27,10 +24,10 @@ function Collapse({ name, text, list }) {
       <div className={`content ${isVisible ? 'active' : 'close'}`}>
         {text ? (
           <p>{text}</p>
-        ) : list.length > 0 ? (
+        ) : list && list.length > 0 ? (
           <ul>
-            {list.map((element, index) => (
-              <li key={index}>{element}</li>
+            {list.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
           </ul>
         ) : (

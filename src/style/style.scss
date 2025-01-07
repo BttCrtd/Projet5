@@ -204,15 +204,15 @@ footer {
     justify-content: space-between;
     align-items: center;
     border-radius: 5px;
-    position: relative; /* Pour permettre au contenu de sortir visuellement de derrière */
-    overflow: hidden; /* Cache le contenu qui dépasse */
+    position: relative;
+    overflow: hidden;
   }
 
   h2 {
     font-size: 24px;
     font-weight: 700;
     color: rgba(255, 255, 255, 1);
-    width: 100%;
+
     margin-left: 15px;
   }
 
@@ -223,63 +223,32 @@ footer {
     background-color: rgba(255, 96, 96, 1);
     color: white;
     margin-right: 15px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
   }
 
   button.rotated {
     transform: rotate(-180deg);
-    transition: all 0.3s ease-in-out;
-  }
-
-  /* Animation pour le texte qui descend */
-  @keyframes slideFromBehind {
-    0% {
-      transform: translateY(-100%);
-      opacity: 0;
-      height: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-      height: auto;
-    }
-  }
-
-  @keyframes slideUp {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-      height: auto;
-    }
-    100% {
-      transform: translateY(-100%);
-      opacity: 0;
-      height: 0;
-    }
+    transition: all 0.5s ease-in-out;
   }
 
   .content {
-    max-height: 0;
-    opacity: 0;
     overflow: hidden;
-    transform: translateY(-100%); /* Cache le texte derrière la bannière */
-    background-color: rgba(246, 246, 246, 1);
-    border-radius: 5px;
     transition:
-      opacity 0.5s ease-in-out,
-      max-height 0.5s ease-in-out;
-    position: relative;
-    z-index: -1;
+      max-height 0.5s ease-in-out,
+      padding 0.5s ease-in-out;
+    background-color: rgba(246, 246, 246, 1);
+    border-radius: 0 0 5px 5px;
   }
 
   .content.active {
-    max-height: 100%;
-    animation: slideFromBehind 0.8s ease-out forwards;
+    max-height: 200px;
+    height: auto;
   }
 
   .content.close {
-    max-height: 100%;
-    animation: slideUp 0.8s ease-out forwards;
+    max-height: 0;
+    height: auto;
   }
 
   p {
