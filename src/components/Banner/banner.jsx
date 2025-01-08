@@ -3,11 +3,16 @@ import '../../style/style.css'
 function Banner({ source, text }) {
   return (
     <div className="banner">
-      <img src={source} />
-      {text && (
+      {text ? (
         <>
+          <img src={source} />
           <div></div>
           <h1>{text}</h1>
+        </>
+      ) : (
+        <>
+          <img src={source} />
+          <div className="simple-banner"></div>
         </>
       )}
     </div>

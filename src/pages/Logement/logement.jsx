@@ -1,32 +1,28 @@
 import '../../style/style.css'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Collapse from '../../components/Collapse/collapse'
-import {
-  faChevronLeft,
-  faChevronRight,
-} from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
+import SlideShow from '../../components/SlideShow/slideShow'
+import { useEffect } from 'react'
+import LogementsData from '../../../public/logements.json'
 
 function Logement() {
+  const navigate = useNavigate()
+  const { id } = useParams()
+  const valideID = LogementsData.map((logement) => logement.id)
+
+  useEffect(() => {
+    if (!valideID.includes(id)) {
+      navigate('*')
+    }
+  }, [id, valideID, navigate])
+
   const location = useLocation()
   const { logement } = location.state || {}
 
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  const nexPicture = () => {
-    setCurrentIndex((nexIndex) => {
-      return nexIndex === logement.pictures.length - 1
-        ? nexIndex - logement.pictures.length + 1
-        : nexIndex + 1
-    })
-  }
-
-  const prevPicture = () => {
-    setCurrentIndex((prevIndex) => {
-      return prevIndex === 0 ? logement.pictures.length - 1 : prevIndex - 1
-    })
+  if (!logement) {
+    return null
   }
 
   const stars = []
@@ -39,7 +35,7 @@ function Logement() {
       />,
     )
   }
-  for (let u = 5 - logement.rating; u != 0; u--) {
+  for (let u = 5 - logement.rating; u !== 0; u--) {
     stars.push(
       <FontAwesomeIcon
         key={`star-empty-${u}`}
@@ -51,26 +47,7 @@ function Logement() {
 
   return (
     <div className="logement">
-      <div className="gallery">
-        <img src={logement.pictures[currentIndex]} />
-        {logement.pictures.length !== 1 ? (
-          <>
-            <div className="button">
-              <button onClick={prevPicture}>
-                <FontAwesomeIcon icon={faChevronLeft} />
-              </button>
-              <button onClick={nexPicture}>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </button>
-            </div>
-            <div className="pictureNumber">
-              <p>
-                {currentIndex + 1}/{logement.pictures.length}
-              </p>
-            </div>
-          </>
-        ) : null}
-      </div>
+      <SlideShow pictures={logement.pictures} />
       <div>
         <div>
           <div className="title">
@@ -85,9 +62,13 @@ function Logement() {
             ))}
           </div>
         </div>
-        <div>
+        <div className="host-and-rating">
           <div className="host">
-            <p>{logement.host.name}</p>
+            <p>
+              {logement.host.name.split(' ')[0]}
+              <br />
+              {logement.host.name.split(' ')[1]}
+            </p>
             <img src={logement.host.picture} alt="" />
           </div>
           <div className="rating">{stars}</div>

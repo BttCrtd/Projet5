@@ -18,7 +18,7 @@ function Collapse({ name, text, list }) {
           className={isVisible ? 'rotated' : ''}
           onClick={toggleVisibility}
         >
-          <FontAwesomeIcon icon={faChevronUp} size="2xl" />
+          <FontAwesomeIcon icon={faChevronUp} />
         </button>
       </div>
       <div className={`content ${isVisible ? 'active' : 'close'}`}>
