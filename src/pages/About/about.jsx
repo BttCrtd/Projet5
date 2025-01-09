@@ -14,7 +14,7 @@ function About() {
     "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standars sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
   return (
     <div>
-      <Banner source={AboutPicture} />
+      <Banner source={AboutPicture} alt={'Photo de fond de montagne'} />
       <section className="collapse">
         <Collapse name={'Fiabilité'} text={fiabilityText} />
         <Collapse name={'Respect'} text={respectText} />

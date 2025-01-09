@@ -12,7 +12,13 @@ function Home() {
   }, [])
   return (
     <div>
-      <Banner source={HomePicture} text={'Chez vous, partout et ailleurs'} />
+      <Banner
+        source={HomePicture}
+        text={'Chez vous, partout et ailleurs'}
+        alt={
+          "Photo de fond d'une côte maritime pour le titre Chez vous, partout et ailleurs"
+        }
+      />
       <section className="cards">
         {logements.map((logement) => (
           <Card key={logement.id} logement={logement} />

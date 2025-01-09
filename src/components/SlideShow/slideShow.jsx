@@ -5,7 +5,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
-function SlideShow({ pictures }) {
+function SlideShow({ pictures, title }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nexPicture = () => {
@@ -24,7 +24,10 @@ function SlideShow({ pictures }) {
 
   return (
     <div className="gallery">
-      <img src={pictures[currentIndex]} />
+      <img
+        src={pictures[currentIndex]}
+        alt={`Photo ${currentIndex + 1} sur ${pictures.length} de ${title}`}
+      />
       {pictures.length !== 1 ? (
         <>
           <div className="button">

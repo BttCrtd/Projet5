@@ -9,7 +9,7 @@ function Layout({ children }) {
   return (
     <div>
       <header>
-        <img src={KasaLogo} />
+        <img src={KasaLogo} alt="Logo kasa" />
         <nav>
           <Link to="/" className={activeLink.pathname === '/' ? 'active' : ''}>
             Accueil
@@ -24,7 +24,7 @@ function Layout({ children }) {
       </header>
       <main>{children}</main>
       <footer>
-        <img src={KasaLogoFooter} />
+        <img src={KasaLogoFooter} alt="Logo kasa" />
         <div>
           <p>© 2020 Kasa. All rights reserved</p>
         </div>

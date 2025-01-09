@@ -47,7 +47,7 @@ function Logement() {
 
   return (
     <div className="logement">
-      <SlideShow pictures={logement.pictures} />
+      <SlideShow pictures={logement.pictures} title={logement.title} />
       <div>
         <div>
           <div className="title">
