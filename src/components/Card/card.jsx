@@ -9,7 +9,7 @@ function Card({ logement }) {
         alt={`Photo de couverture de ${logement.title}`}
       />
       <div></div>
-      <h2 key={logement.id}>{logement.title}</h2>
+      <h2>{logement.title}</h2>
     </Link>
   )
 }

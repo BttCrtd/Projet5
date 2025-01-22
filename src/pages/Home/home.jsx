@@ -1,15 +1,9 @@
 import Banner from '../../components/Banner/banner'
 import HomePicture from '../../assets/IMG.png'
 import LogementsData from '../../../public/logements.json'
-import { useEffect, useState } from 'react'
 import Card from '../../components/Card/card'
 
 function Home() {
-  const [logements, setLogements] = useState([])
-
-  useEffect(() => {
-    setLogements(LogementsData)
-  }, [])
   return (
     <div>
       <Banner
@@ -20,7 +14,7 @@ function Home() {
         }
       />
       <section className="cards">
-        {logements.map((logement) => (
+        {LogementsData.map((logement) => (
           <Card key={logement.id} logement={logement} />
         ))}
       </section>
